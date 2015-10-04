@@ -4,15 +4,111 @@
 
 <body>
   {{> topbar}}
-
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
+  <br>
 </body>
 
-<template name="hello">
-  <button class="btn btn-default">Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="login">
+  <div class="ui raised very padded text container segment">
+    <form class="ui form" id="login-form" action="action">
+        <div class="field">
+          <label>User name</label>
+        <input type="text" id="user-name"/>
+          </div>
+        <div class="field">
+          <label>Password</label>
+        <input type="password" id="password"/>
+          </div>
+        <div class="field">
+        <input class="ui button" type="submit" id="submit-button" value="Sign in"/>
+          </div>
+    </form>
+  </div>
+  <br>
+  <div class="ui center aligned container">
+    New? <a href="/register">Register</a>
+  </div>
+</template>
+
+<template name="register">
+  <div class="ui raised very padded text container segment">
+    <form class="ui form" id="register-form" action="action">
+        <div class="field">
+          <label>User name</label>
+        <input type="text" id="user-name"/>
+          </div>
+        <div class="field">
+          <label>Password</label>
+        <input type="password" id="password"/>
+          </div>
+        <div class="field">
+        <input class="ui button" type="submit" id="submit-button" value="Register"/>
+          </div>
+    </form>
+  </div>
+</template>
+
+<template name="users">
+  <div class="ui raised very padded text container segment">
+    <div>
+      <table class="ui celled table">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each users}}
+        <tr>
+          <td>{{username}}</td>
+          <td>
+            <a id="delete-user" data-id="{{username}}" href="">
+              <i class="remove user icon"></i> Delete
+            </a>
+          </td>
+        </tr>
+        {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</template>
+
+<template name="newstuff">
+  <div class="ui raised very padded text container segment">
+    <form class="ui form" id="newstuff-form" action="action">
+        <div class="field">
+          <label>Stuff name</label>
+        <input type="text" id="name"/>
+          </div>
+        <div class="field">
+        <input class="ui button" type="submit" id="submit-button" value="Create"/>
+          </div>
+    </form>
+    </div>
+</template>
+
+<template name="stuffs"> <!-- Stuff list -->
+  <div class="ui raised very padded text container segment">
+    <div>
+    {{#if stuffCount}}
+    <h1>Stuffs:</h1>
+    <ul>
+    {{#each stuffs}}
+      <li>
+        <a href="" data-id="{{name}}">{{name}}</a>
+      </li>
+    {{/each}} 
+    </ul> 
+    {{else}}
+    No stuffs found   
+    {{/if}}
+    </div>
+  </div>
+</template>
+
+<template name="stuff">
+  Stuff details
 </template>
 
 <template name="topbar">
