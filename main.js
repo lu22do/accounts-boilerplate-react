@@ -11,18 +11,6 @@ if (Meteor.isClient) {
   });
 
   Template.topbar.events({
-    'click #main': function() {
-      Router.go('/');
-    },
-    'click #newstuff': function() {
-      Router.go('/newstuff');
-    },
-    'click #users': function() {
-      Router.go('/users');
-    },
-    'click #stuffs': function() {
-      Router.go('/stuffs');
-    },
     'click #logout': function() {
       Meteor.logout(function() {
         Router.go('/');

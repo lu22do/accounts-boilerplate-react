@@ -5,52 +5,58 @@
 <body>
   {{> topbar}}
   <br>
+
 </body>
 
 <template name="login">
-  <div class="ui raised very padded text container segment">
-    <form class="ui form" id="login-form" action="action">
-        <div class="field">
-          <label>User name</label>
-        <input type="text" id="user-name"/>
-          </div>
-        <div class="field">
-          <label>Password</label>
-        <input type="password" id="password"/>
-          </div>
-        <div class="field">
-        <input class="ui button" type="submit" id="submit-button" value="Sign in"/>
-          </div>
-    </form>
+  <div class="container">
+    <div class="panel panel-default">
+      <div class="panel-heading">Login</div>
+      <div class="panel-body">
+        <form id="login-form" action="action">
+            <div class="form-group">
+              <label>User name</label>
+              <input class="form-control" type="text" id="user-name"/>
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input class="form-control" type="password" id="password"/>
+            </div>
+            <input class="btn btn-default" type="submit" id="submit-button" value="Sign in"/>
+        </form>
+      </div>
+    </div>
   </div>
-  <br>
-  <div class="ui center aligned container">
+  <div class="container">
     New? <a href="/register">Register</a>
   </div>
 </template>
 
 <template name="register">
-  <div class="ui raised very padded text container segment">
-    <form class="ui form" id="register-form" action="action">
-        <div class="field">
-          <label>User name</label>
-        <input type="text" id="user-name"/>
-          </div>
-        <div class="field">
-          <label>Password</label>
-        <input type="password" id="password"/>
-          </div>
-        <div class="field">
-        <input class="ui button" type="submit" id="submit-button" value="Register"/>
-          </div>
-    </form>
+  <div class="container">
+    <div class="panel panel-default">
+      <div class="panel-heading">Create new account</div>
+      <div class="panel-body">
+        <form id="register-form" action="action">
+            <div class="form-group">
+              <label>User name</label>
+              <input class="form-control" type="text" id="user-name"/>
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input class="form-control" type="password" id="password"/>
+            </div>
+            <input class="btn btn-default" type="submit" id="submit-button" value="Register"/>
+        </form>
+      </div>
+    </div>
   </div>
 </template>
 
 <template name="users">
-  <div class="ui raised very padded text container segment">
+  <div class="container">
     <div>
-      <table class="ui celled table">
+      <table class="table table-striped">
         <thead>
         <tr>
           <th>Name</th>
@@ -74,22 +80,26 @@
   </div>
 </template>
 
+<template name="main">
+  <div class="container">
+    <h1>Welcome to this site!</h1>
+  </div>
+</template>
+
 <template name="newstuff">
-  <div class="ui raised very padded text container segment">
-    <form class="ui form" id="newstuff-form" action="action">
-        <div class="field">
+  <div class="container">
+    <form id="newstuff-form" action="action">
+        <div class="form-group">
           <label>Stuff name</label>
-        <input type="text" id="name"/>
-          </div>
-        <div class="field">
-        <input class="ui button" type="submit" id="submit-button" value="Create"/>
-          </div>
+          <input class="form-control" type="text" id="name"/>
+        </div>
+        <input class="btn btn-default" type="submit" id="submit-button" value="Create"/>
     </form>
     </div>
 </template>
 
 <template name="stuffs"> <!-- Stuff list -->
-  <div class="ui raised very padded text container segment">
+  <div class="container">
     <div>
     {{#if stuffCount}}
     <h1>Stuffs:</h1>
@@ -123,22 +133,23 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Brand</a>
+        <a class="navbar-brand" href="/">Brand</a>
       </div>
 
+      {{#if currentUser}}
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-          <li><a href="#" id="">Link</a></li>
-          <li><a href="#">Stuffs</a></li>
-          <li><a href="#">Stuffs</a></li>
+          <li class="active"><a href="/stuffs">Stuffs</a></li>
+          <li><a href="/newstuff">New stuff</a></li>
+          <li><a href="/users">Users</a></li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Logout ({{currentUser.username}})</a></li>
+          <li><a href="#" id="logout">Logout ({{currentUser.username}})</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->      
+      {{/if}}
     </div><!-- /.container-fluid -->
   </nav>
 
