@@ -1,0 +1,44 @@
+<template name="login">
+  <div class="container">
+    <div class="panel panel-default">
+      <div class="panel-heading">Login</div>
+      <div class="panel-body">
+        <form id="login-form" action="action">
+            <div class="form-group">
+              <label>User name</label>
+              <input class="form-control" type="text" id="user-name"/>
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input class="form-control" type="password" id="password"/>
+            </div>
+            <input class="btn btn-default" type="submit" id="submit-button" value="Sign in"/>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    New? <a href="/register">Register</a>
+  </div>
+</template>
+
+<template name="register">
+  <div class="container">
+    <div class="panel panel-default">
+      <div class="panel-heading">Create new account</div>
+      <div class="panel-body">
+        <form id="register-form" action="action">
+            <div class="form-group">
+              <label>User name</label>
+              <input class="form-control" type="text" id="user-name"/>
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input class="form-control" type="password" id="password"/>
+            </div>
+            <input class="btn btn-default" type="submit" id="submit-button" value="Register"/>
+        </form>
+      </div>
+    </div>
+  </div>
+</template>
