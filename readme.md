@@ -18,9 +18,9 @@ This project was created by adding:
 - twbs:bootstrap
 
 Todo:
-- Add owner to stuffs
-- Allow to delete own stuffs
-- Admin concept (can edit users and any stuff)
 - Secure
-
+- Allow to delete own stuffs only
+- Admin concept (can edit users and any stuff)
+- Stuff attribute 1 & 2 
+- Stuff edit screen
 
