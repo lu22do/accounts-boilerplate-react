@@ -18,7 +18,6 @@ This project was created by adding:
 - twbs:bootstrap
 
 Todo:
-- Active items in topbar depending on template
 - Add owner to stuffs
 - Allow to delete own stuffs
 - Admin concept (can edit users and any stuff)

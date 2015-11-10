@@ -15,13 +15,26 @@
     <div>
     {{#if stuffCount}}
     <h1>Stuffs:</h1>
-    <ul>
-    {{#each stuffs}}
-      <li>
-        <a href="" data-id="{{name}}">{{name}}</a>
-      </li>
-    {{/each}} 
-    </ul> 
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Owner</th>
+        <th>Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      {{#each stuffs}}
+      <tr>
+        <td>{{name}}</td>
+        <td>{{owner}}</td>
+        <td>
+          <a id="delete-stuff" data-id="{{name}}" href="">Delete</a>
+        </td>
+      </tr>
+      {{/each}}
+      </tbody>
+    </table>
     {{else}}
     No stuffs found   
     {{/if}}
