@@ -17,11 +17,9 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li class="active">
-            <a href="/stuffs"><span class="glyphicon glyphicon-th-list"></span> Stuffs</a>
-          </li>
-          <li><a href="/newstuff"><span class="glyphicon glyphicon-plus"></span> Add stuff</a></li>
-          <li><a href="/users"><span class="glyphicon glyphicon-user"></span> Users</a></li>
+          <li class="{{stuffsactive}}"><a href="/stuffs"><span class="glyphicon glyphicon-th-list"></span> Stuffs</a></li>
+          <li class="{{newstuffactive}}"><a href="/newstuff"><span class="glyphicon glyphicon-plus"></span> Add stuff</a></li>
+          <li class="{{usersactive}}"><a href="/users"><span class="glyphicon glyphicon-user"></span> Users</a></li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
