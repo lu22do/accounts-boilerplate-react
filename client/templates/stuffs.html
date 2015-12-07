@@ -27,9 +27,11 @@
       {{#each stuffs}}
       <tr>
         <td>{{name}}</td>
-        <td>{{owner}}</td>
+        <td>{{ownername}}</td>
         <td>
+          {{#if myStuff}}
           <a id="delete-stuff" data-id="{{name}}" href="">Delete</a>
+          {{/if}}
         </td>
       </tr>
       {{/each}}

@@ -1,6 +1,17 @@
 Template.stuffs.helpers({
   stuffs: function() {
-    return Stuffs.find({});
+    return Stuffs.find({}).map(function(stuff) {
+      var user = Meteor.users.findOne(stuff.owner);
+
+      var myStuff = false;
+      if (Meteor.userId() === stuff.owner || (Meteor.user() && Meteor.user().username === 'admin')) {
+        myStuff = true;
+      }
+
+      return {name: stuff.name, 
+              ownername: user ? user.username : "error",
+              myStuff: myStuff};
+    });
   },
   stuffCount: function() {
     return Stuffs.find({}).count();
@@ -27,7 +38,7 @@ Template.newstuff.events({
     e.preventDefault();
     var name = t.find('#name').value;
     if (!Stuffs.find({name: name}).count()) {
-      Stuffs.insert({name: name, owner: Meteor.user().username}, function(err, _id) {
+      Stuffs.insert({name: name, owner: Meteor.userId()}, function(err, _id) {
         if (err) {
           alert('Unexpected error creating this stuff!')
           Router.go('/');
@@ -38,8 +49,8 @@ Template.newstuff.events({
       });
     }
     else {
-      alert('Error, this stuff already exists!')
-      t.reset();
+      alert('This stuff already exists! Could not create it.')
+      t.find('#newstuff-form').reset();
     }
     return false;
   }

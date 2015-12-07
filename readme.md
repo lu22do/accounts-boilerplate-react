@@ -1,15 +1,18 @@
-This is a meteor boilerplate for an app manipulating some data (a collection of 'stuffs') and protected by accounts using (by default) an email address for login. There is a concept of 'admin' account who can see and administer the users.
+This is a meteor boilerplate for an app manipulating some data (a collection of 'stuffs') and protected by accounts using a user name for login. There is a concept of 'admin' account who can see and administer the users (and any stuff data).
 
 Login is required to use the app.
+Only owner can delete/edit his own stuff.
 
 Templates:
 - Main
-- Login
-- Register
 - Topbar
-- Stuff list
-- User list
-- Logout
+- Auth
+    - Login 
+    - Register
+- Stuffs
+    - Stuff list
+- Users
+    - User list
 
 This project was created by adding:
 - accounts-base
@@ -18,9 +21,7 @@ This project was created by adding:
 - twbs:bootstrap
 
 Todo:
-- Secure
-- Allow to delete own stuffs only
-- Admin concept (can edit users and any stuff)
+- Create admin account automatically
 - Stuff attribute 1 & 2 
 - Stuff edit screen
 
