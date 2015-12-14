@@ -2,6 +2,7 @@ This is a meteor boilerplate for an app manipulating some data (a collection of 
 
 Login is required to use the app.
 Only owner can delete/edit his own stuff.
+Admin password can be set in the settings.json file.
 
 Templates:
 - Main
@@ -11,6 +12,8 @@ Templates:
     - Register
 - Stuffs
     - Stuff list
+    - Create stuff
+    - Edit stuff
 - Users
     - User list
 
@@ -19,9 +22,3 @@ This project was created by adding:
 - accounts-password
 - iron:router (+ ejson)
 - twbs:bootstrap
-
-Todo:
-- Create admin account automatically (admin name is reserved)
-- Stuff attribute 1 & 2 
-- Stuff edit screen
-
