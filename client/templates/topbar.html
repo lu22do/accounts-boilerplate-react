@@ -19,7 +19,9 @@
         <ul class="nav navbar-nav">
           <li class="{{stuffsactive}}"><a href="/stuffs"><span class="glyphicon glyphicon-th-list"></span> Stuffs</a></li>
           <li class="{{newstuffactive}}"><a href="/newstuff"><span class="glyphicon glyphicon-plus"></span> Add stuff</a></li>
+          {{#if isAdmin}}
           <li class="{{usersactive}}"><a href="/users"><span class="glyphicon glyphicon-user"></span> Users</a></li>
+          {{/if}}
         </ul>
 
         <ul class="nav navbar-nav navbar-right">

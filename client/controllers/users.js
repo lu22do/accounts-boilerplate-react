@@ -1,6 +1,9 @@
 Template.users.helpers({
   users: function () {
     return Meteor.users.find({});      
+  },
+  isNotAdmin: function() {
+    return this.username != 'admin';
   }
 });
 

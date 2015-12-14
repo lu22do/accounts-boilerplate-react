@@ -11,7 +11,7 @@ Template.stuffs.helpers({
       return {name: stuff.name, 
               attribute: stuff.attribute,      
               id: stuff._id,      
-              ownername: user ? user.username : "error",
+              ownername: user ? user.username : "unknown",
               isMyStuff: isMyStuff};
     });
   },

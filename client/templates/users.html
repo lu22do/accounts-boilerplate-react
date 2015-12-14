@@ -13,7 +13,9 @@
         <tr>
           <td>{{username}}</td>
           <td>
+            {{#if isNotAdmin}}
             <a id="delete-user" data-id="{{username}}" href="">Delete</a>
+            {{/if}}
           </td>
         </tr>
         {{/each}}

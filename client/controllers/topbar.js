@@ -7,6 +7,9 @@ Template.topbar.helpers({
   },  
   usersactive: function() {    
     return Router.current().route.getName() === 'users' ? 'active' : '';
+  },
+  isAdmin: function() {
+    return Meteor.user() && Meteor.user().username === 'admin';
   }  
 });
 
