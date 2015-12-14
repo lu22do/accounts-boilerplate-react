@@ -21,7 +21,7 @@ This project was created by adding:
 - twbs:bootstrap
 
 Todo:
-- Create admin account automatically
+- Create admin account automatically (admin name is reserved)
 - Stuff attribute 1 & 2 
 - Stuff edit screen
 

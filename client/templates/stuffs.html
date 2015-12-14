@@ -1,16 +1,39 @@
 <template name="newstuff">
   <div class="container">
-    <form id="newstuff-form" action="action">
+    <div>Create new stuff:</div>
+    <form id="new-stuff-form" action="action">
         <div class="form-group">
           <label>Stuff name</label>
           <input class="form-control" type="text" id="name"/>
+        </div>
+        <div class="form-group">
+          <label>Stuff attribute</label>
+          <input class="form-control" type="text" id="attribute"/>
         </div>
         <input class="btn btn-default" type="submit" id="submit-button" value="Create"/>
     </form>
     </div>
 </template>
 
-<template name="stuffs"> <!-- Stuff list -->
+<template name="editstuff">
+  <div class="container">
+    <h3>Update this stuff:</h3>
+    <form id="edit-stuff-form" action="action" data-id="{{_id}}">
+        <div class="form-group">
+          <label>Stuff name</label>
+          <input class="form-control" type="text" id="name" value="{{name}}"/>
+        </div>
+        <div class="form-group">
+          <label>Stuff attribute</label>
+          <input class="form-control" type="text" id="attribute" value="{{attribute}}"/>
+        </div>
+        <input class="btn btn-default" type="submit" id="update-button" value="Update"/>
+        <a class="btn btn-default" href="/stuffs">Cancel</a>
+    </form>
+    </div>
+</template>
+
+<template name="stuffs">
   <div class="container">
     <div>
     {{#if stuffCount}}
@@ -19,6 +42,7 @@
       <thead>
       <tr>
         <th>Name</th>
+        <th>Attribute</th>
         <th>Owner</th>
         <th>Action</th>
       </tr>
@@ -27,10 +51,12 @@
       {{#each stuffs}}
       <tr>
         <td>{{name}}</td>
+        <td>{{attribute}}</td>
         <td>{{ownername}}</td>
         <td>
-          {{#if myStuff}}
-          <a id="delete-stuff" data-id="{{name}}" href="">Delete</a>
+          {{#if isMyStuff}}
+          <a href="/editstuff/{{id}}">Edit</a> / 
+          <a id="delete-stuff" data-id="{{id}}" href="">Delete</a>
           {{/if}}
         </td>
       </tr>
@@ -42,8 +68,4 @@
     {{/if}}
     </div>
   </div>
-</template>
-
-<template name="stuff">
-  Stuff details
 </template>

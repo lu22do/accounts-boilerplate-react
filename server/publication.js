@@ -26,8 +26,11 @@ Stuffs.allow({
     return doc.owner === userId;
   },
   remove: function (userId, doc) {
+    var currentUser = Meteor.user();
+
     // can only remove your own documents
-    return doc.owner === userId;
+    return doc.owner === userId || 
+           (currentUser && currentUser.username === 'admin');
   },
   fetch: ['owner']
 });
@@ -56,6 +59,6 @@ Meteor.users.allow({
   remove: function (userId, doc) {
     var currentUser = Meteor.user();
 
-		return (currentUser && currentUser.username === 'admin') ? true : false;
+		return currentUser && currentUser.username === 'admin';
   }
 });

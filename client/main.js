@@ -19,6 +19,12 @@ Router.route('/', function() {
 
 Router.route('/stuffs');
 Router.route('/newstuff');
+Router.route('/editstuff/:_id', {
+	template: 'editstuff',
+  data: function(){
+    return Stuffs.findOne(this.params._id);
+  }
+});
 Router.route('/users');
 Router.route('/register');
 
