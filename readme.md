@@ -8,7 +8,7 @@ Templates:
 - Main
 - Topbar
 - Auth
-    - Login 
+    - Login
     - Register
 - Stuffs
     - Stuff list
@@ -18,7 +18,8 @@ Templates:
     - User list
 
 This project was created by adding:
-- accounts-base
-- accounts-password
-- iron:router (+ ejson)
+- accounts-base & accounts-password
+- iron:router
 - twbs:bootstrap
+- momentjs:moment
+- aldeed:simple-schema & aldeed:collection2

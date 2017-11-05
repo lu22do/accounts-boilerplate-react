@@ -11,7 +11,7 @@ Template.stuffs.helpers({
 
       return {name: stuff.name,
               attribute: stuff.attribute,
-              created: stuff.created,
+              created: moment(stuff.created).calendar(),
               id: stuff._id,
               ownername: user ? user.username : "unknown",
               isMyStuff: isMyStuff};

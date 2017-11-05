@@ -26,3 +26,4 @@ shell-server
 dynamic-import
 aldeed:simple-schema
 aldeed:collection2
+momentjs:moment
