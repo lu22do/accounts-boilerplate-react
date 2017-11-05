@@ -44,6 +44,7 @@
         <th>Name</th>
         <th>Attribute</th>
         <th>Owner</th>
+        <th>Creation date</th>
         <th>Action</th>
       </tr>
       </thead>
@@ -53,9 +54,10 @@
         <td>{{name}}</td>
         <td>{{attribute}}</td>
         <td>{{ownername}}</td>
+        <td>{{created}}</td>
         <td>
           {{#if isMyStuff}}
-          <a href="/editstuff/{{id}}">Edit</a> / 
+          <a href="/editstuff/{{id}}">Edit</a> /
           <a id="delete-stuff" data-id="{{id}}" href="">Delete</a>
           {{/if}}
         </td>
@@ -64,7 +66,7 @@
       </tbody>
     </table>
     {{else}}
-    No stuffs found   
+    No stuffs found
     {{/if}}
     </div>
   </div>

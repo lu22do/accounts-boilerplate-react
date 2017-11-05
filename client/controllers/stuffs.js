@@ -4,13 +4,15 @@ Template.stuffs.helpers({
       var user = Meteor.users.findOne(stuff.owner);
 
       var isMyStuff = false;
-      if (Meteor.userId() === stuff.owner || (Meteor.user() && Meteor.user().username === 'admin')) {
+      if (Meteor.userId() === stuff.owner ||
+          (Meteor.user() && Meteor.user().username === 'admin')) {
         isMyStuff = true;
       }
 
-      return {name: stuff.name, 
-              attribute: stuff.attribute,      
-              id: stuff._id,      
+      return {name: stuff.name,
+              attribute: stuff.attribute,
+              created: stuff.created,
+              id: stuff._id,
               ownername: user ? user.username : "unknown",
               isMyStuff: isMyStuff};
     });
@@ -39,12 +41,12 @@ Template.newstuff.events({
     var attribute = t.find('#attribute').value;
     if (!Stuffs.find({name: name}).count()) {
       Stuffs.insert({name: name,
-                     attribute: attribute, 
+                     attribute: attribute,
                      owner: Meteor.userId()}, function(err, _id) {
         if (err) {
-          alert('Unexpected error creating this stuff!')
+          alert('Unexpected error creating this stuff! (' + err + ')');
           Router.go('/');
-        } 
+        }
         else {
           Router.go('/stuffs');
         }
@@ -70,7 +72,7 @@ Template.editstuff.events({
       if (err) {
         alert('Unexpected error updating this stuff!')
         t.find('#newstuff-form').reset();
-      } 
+      }
       else {
         Router.go('/stuffs');
       }
