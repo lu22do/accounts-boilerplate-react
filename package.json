@@ -1,0 +1,23 @@
+{
+  "name": "accounts-boilerplate-react",
+  "version": "1.0.0",
+  "description": "This is a meteor boilerplate for an app manipulating some data (a collection of 'stuffs' defined by a schemas) and protected by accounts using a user name for login. It relies on react and flowrouter.",
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.26.0",
+    "bcrypt": "^1.0.3"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lu22do/accounts-boilerplate-react.git"
+  },
+  "author": "lu22do",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lu22do/accounts-boilerplate-react/issues"
+  },
+  "homepage": "https://github.com/lu22do/accounts-boilerplate-react#readme"
+}

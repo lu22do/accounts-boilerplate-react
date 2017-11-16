@@ -1,4 +1,4 @@
-This is a meteor boilerplate for an app manipulating some data (a collection of 'stuffs' defined by a schemas) and protected by accounts using a user name for login. 
+This is a meteor boilerplate for an app manipulating some data (a collection of 'stuffs' defined by a schemas) and protected by accounts using a user name for login. It relies on react and flowrouter.
 
 Regarding account management, there is a concept of 'admin' account who can see and administer the users (and any stuff data).
 Login is required to use the app and only owner can delete/edit his own stuff. The Admin password can be set in the settings.json file.
