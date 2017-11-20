@@ -1,12 +1,30 @@
-Meteor.subscribe('stuffs');
-Meteor.subscribe("userData");
+import React from 'react';
+import { Meteor } from 'meteor/meteor';
+import ReactDOM from 'react-dom';
 
+import App from '../imports/ui/App.jsx';
+
+Meteor.subscribe('stuffs');
+Meteor.subscribe('userData');
+
+Meteor.startup(() => {
+  ReactDOM.render(<App />, document.getElementById('render-target'));
+});
+
+/*
 Router.map(function(){
   this.onBeforeAction(function () {
-      if (!Meteor.userId()) {
-        this.render('Login');
-      } else {
-        this.next();
+      this.subscribe('userData').wait();
+
+      if (this.ready()) {
+        if (!Meteor.user()) {
+          this.render('login');
+        } else {
+          this.next();
+        }
+      }
+      else {
+        this.render('wait');
       }
     },
     {
@@ -18,9 +36,9 @@ Router.map(function(){
     this.render('main');
   });
 
-  this.route('/stuffs', function () {
-    this.render('stuffs');
-  });
+   this.route('/stuffs', function () {
+     this.render('stuffs');
+   });
 
   this.route('/newstuff');
 
@@ -35,6 +53,4 @@ Router.map(function(){
 
   this.route('/register');
 });
-
-
- 
+*/
