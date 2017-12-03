@@ -25,3 +25,8 @@ This project was created by adding the following meteor packages:
 and the following npm packages:
 - react, react-dom, prop-types
 - react-router-dom
+
+Possible improvements:
+- for error handling, use real UI component rather than alert() 
+- add unit test
+- add a 'Stuff detail' UI component as real app would usually have more details than can be shown in 'Stuff list'
