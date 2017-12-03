@@ -11,8 +11,8 @@ The UI react components are the following:
     - Register
 - Stuffs:
     - Stuff list
-    - New stuff
-    - Edit stuff
+    - New stuff (uses StuffEntry component)
+    - Edit stuff (uses StuffEntry component)
 - Users:
     - User list
 
