@@ -1,36 +1,26 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom'
 import { withTracker } from 'meteor/react-meteor-data';
+
 import Stuffs from '../../lib/globals';
+import StuffEntry from './StuffEntry.jsx'
 
 class EditStuff extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      loaded: false,
-      name: this.props.stuff ? this.props.stuff.name : '',
-      attribute: this.props.stuff ? this.props.stuff.attribute : ''
+      loaded: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleInputChange = this.handleInputChange.bind(this);
-  }
-
-  handleInputChange(event) {
-    const value = event.target.value;
-    const name = event.target.name;
-
-    this.setState({
-      [name]: value
-    });
   }
 
   handleSubmit(event) {
     event.preventDefault();
 
-    let name = this.state.name;
-    let attribute = this.state.attribute;
+    let name = this.stuffEntry.state.name;
+    let attribute = this.stuffEntry.state.attribute;
     let that = this;
 
     Stuffs.update(this.props.stuff._id,
@@ -65,28 +55,8 @@ class EditStuff extends Component {
     }
 
     return (
-      <div className="container">
-        <h3>Update this stuff:</h3>
-        <form id="edit-stuff-form" action="action" onSubmit={this.handleSubmit}>
-
-            <div className="form-group">
-              <label>Stuff name</label>
-              <input className="form-control" type="text" name="name"
-                value={this.state.name}
-                onChange={this.handleInputChange} />
-            </div>
-
-            <div className="form-group">
-              <label>Stuff attribute</label>
-              <input className="form-control" type="text" name="attribute"
-                value={this.state.attribute}
-                onChange={this.handleInputChange} />
-            </div>
-
-            <input className="btn btn-default" type="submit" value="Update"/>&nbsp;
-            <Link className="btn btn-default" to="/stuff-list">Cancel</Link>
-        </form>
-      </div>
+      <StuffEntry title="Edit a stuff:" stuff={this.props.stuff} handleSubmit={this.handleSubmit}
+        ref={(stuffEntry) => {this.stuffEntry = stuffEntry}} submitTitle="Update" hasCancelButton />
     );
   }
 }

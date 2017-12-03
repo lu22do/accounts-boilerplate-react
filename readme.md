@@ -27,7 +27,7 @@ and the following npm packages:
 - react-router-dom
 
 Possible improvements:
-- merge new stuff and edit stuff
 - for error handling, use real UI component rather than alert() - actually alert() don't seem to work with react-router
 - add unit test
 - add a 'Stuff detail' UI component as real app would usually have more details than can be shown in 'Stuff list'
+- investigate why stuff updates are not reflected dynamically (only add/remove) in list and edit views
