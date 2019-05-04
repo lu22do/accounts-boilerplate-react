@@ -20,11 +20,12 @@ This project was created by adding the following meteor packages:
 - accounts-base & accounts-password
 - twbs:bootstrap
 - momentjs:moment
-- aldeed:simple-schema & aldeed:collection2
+- aldeed:collection2 & aldeed:schema-deny
 - react-meteor-data
 and the following npm packages:
 - react, react-dom, prop-types
 - react-router-dom
+- simpl-schema
 
 Possible improvements:
 - for error handling, use real UI component rather than alert() - actually alert() don't seem to work with react-router
